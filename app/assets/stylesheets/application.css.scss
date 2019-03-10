@@ -1,0 +1,340 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ /*------------------------------------------------------------------
+
+   Css Templete
+
+   Project:	2019-1 미디어프로젝트 <teamate>
+   Last change:	2019-03-10
+   Author: 김가현
+
+ -------------------------------------------------------------------*/
+
+ /************** General *************/
+
+ body {
+   background: #fafafa;
+ }
+
+ a {
+ text-decoration: none;
+ cursor: pointer;
+ }
+
+ h1 {
+ 	font-weight: 700;
+ 	font-size: 34px;
+ 	color: #000;
+ 	margin: 0;
+ }
+
+ h2 {
+ 	font-size: 20px;
+ 	color: #000;
+ 	margin: 10px 0 10px;
+ }
+
+ h3 {
+ 	font-size: 17px;
+ }
+
+ p {
+ 	font-size: 15px;
+ 	line-height: 24px;
+ 	margin-top: 10px;
+ }
+
+ // to make <a> tag unclickable
+ .unclickable{
+   pointer-events: none;
+   cursor: default;
+ }
+
+ /************** main page *************/
+
+ .banner {
+   -moz-box-align: center;
+   align-items: center;
+   display: flex;
+   position: relative;
+ }
+
+ .bg-img{
+   width: 100%;
+   height: auto;
+   position: relative;
+   min-height: -webkit-fill-available;
+   background-size: cover;
+   background-position: center bottom;
+ }
+
+ .main-title{
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 50px;
+  color: #ffffff;
+  word-spacing: 2px;
+  text-shadow: 1px 1px 5px #565656;
+ }
+
+ .main-title-desc{
+  font-size: 17px;
+  line-height: 35px;
+  margin: 25px 0px 60px;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px #565656;
+ }
+
+ .section{
+   text-align: center;
+   padding: 15px 0px 50px;
+ }
+
+ .section-title{
+   text-align: center;
+    margin: 30px 20px 10px;
+    font-size: 17px;
+    font-weight: 700;
+ }
+
+ /************** highlight *************/
+
+ .highlight{
+  background-color: #BFECD6;
+  padding: 25px 0px;
+  margin-bottom: 0px !important;
+  text-align: center;
+ }
+
+ .highlight-title{
+   margin: 20px 0px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #565656;
+}
+  .highlight-desc{
+    font-size: 16px;
+    line-height: 35px;
+    margin-bottom: 30px;
+ }
+
+ .highlight-button{
+  background: #ffffff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  width: 180px;
+  height: 45px;
+  line-height: 45px;
+  display: inline-block;
+  cursor: pointer;
+ }
+  .block {
+  margin: 20px 20px;
+  padding: 20px 20px;
+  }
+
+  /************** footer *************/
+
+.footer{
+  position: relative;
+  height: 100px;
+  text-align: center;
+  font-weight: 500;
+  border-top: 1px solid #EFEFEF;
+  line-height: 50px;
+  padding-top: 10px;
+}
+
+.footer-info{
+  clear: both;
+  line-height: 22px;
+  font-size: 12px;
+  text-align: center;
+  color: #b1b1b1;
+  padding-bottom: 20px;
+}
+
+/************** card *************/
+
+.card{
+  position: relative;
+  width: 410px;
+  vertical-align: top;
+  margin: 20px 15px;
+  background-color: #ffffff;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 0px 0px 30px #eee;
+  padding: 32px 35px;
+  box-sizing: border-box;
+  height: 375px;
+}
+
+.card-profile-img{
+  border-radius: 20px;
+  overflow: hidden;
+  width: 33px;
+  height: 33px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.card-username{
+  margin-left: 7px;
+  vertical-align: middle;
+  display: inline;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3c3c3c;
+  cursor: pointer;
+}
+
+.card-user-category{
+  display: inline;
+  position: absolute;
+  right: 35px;
+  color: #979797;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.card-sub{
+  font-size: 13px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #707070;
+  cursor: pointer;
+}
+
+.card-job{
+  margin: 7px 0px;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-detail{
+  margin: 7px 0px;
+  cursor: pointer;
+  height: 82px;
+  overflow: hidden;
+}
+
+.card-bottom{
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  left: 0px;
+  bottom: 23px;
+}
+
+.card-last-update{
+  color: gray;
+  position: absolute;
+  top: 3px;
+  left: 35px;
+}
+
+.card-scrap{
+  position: absolute;
+  right: 28px;
+  top: 6px;
+  cursor: pointer;
+}
+
+/************** recurit card *************/
+
+.recruit-card{
+  position: relative;
+  width: 410px;
+  height: 378px;
+  vertical-align: top;
+  margin: 20px 15px;
+  background-color: #ffffff;
+  display: inline-block;
+  text-align: left;
+  box-shadow: 0px 0px 30px #eee;
+}
+
+.recruit-card-image{
+  height: 130px;
+  overflow: hidden;
+}
+
+.hover{
+  opacity: 0;
+  transition-duration: 0.2s;
+  background-color: #ffd112;
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.recruit-content{
+  padding: 25px 30px;
+}
+
+.recruit-title{
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recruit-subtitle{
+  margin-top: 5px;
+  color: #979797;
+  font-size: 14px;
+}
+
+.recruit-for{
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.recruit-desc{
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 25px;
+  margin-top: 5px;
+  color: #707070;
+  word-break: keep-all;
+}
+
+.recruit-bottom{
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  bottom: 23px;
+  color: gray;
+}

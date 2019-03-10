@@ -1,0 +1,86 @@
+<ul style="opacity: 0.5;">
+  <span class="logo">
+  </span>
+  <!-- <li><a href="javascript:logoutWithKakao()">로그아웃하기</a></li>
+  <li><a href="javascript:loginWithKakao()">카카오톡 로그인</a></li> -->
+  <% if current_user %>
+    <li><a href="#">로그아웃</a></li>
+    <li><a href="#">마이페이지</a></li>
+  <% else %>
+    <li><a href="<%= new_user_registration_path %>">로그인/회원가입</a></li>
+  <% end %>
+  <li><a class="unclickable"">|</a></li>
+  <li><a href="<%=  %>">커뮤니티</a></li>
+
+  <!-- <li><a class="active" href="<%#=  new_user_session_path %>">로그인/회원가입</a></li> -->
+  <li><a href="#">프로젝트모집</a></li>
+  <li><a href="#">티메이트찾기</a></li>
+
+  <% if current_user %>
+  <li><a class="unclickable"><%= current_user.email %>님 안녕하세요!</a></li>
+  <% end %>
+
+  <li style="float: left"> <a href="#">로고</a>
+  </li>
+</ul>
+
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+  Kakao.init('0f46a73373f0b5945e830d706f7fa38d');
+    function loginWithKakao() {
+      // 로그인 창을 띄웁니다.
+      Kakao.Auth.login({
+        success: function(authObj) {
+          alert(JSON.stringify(authObj));
+        },
+        fail: function(err) {
+          alert(JSON.stringify(err));
+        }
+      });
+    };
+
+    function logoutWithKakao(){
+      Kakao.Auth.logout(function(){
+        setTimeout(function(){
+          location.href = "http://localhost:3000"
+        },1000);
+        console.log("logout");
+      });
+
+      // function getAccessToken(){
+      //   console.log("success");
+      //   Kakao.Auth.getAccessToken();
+      // };
+    }
+
+  //]]>
+</script>
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  li {
+    float: right;
+  }
+
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* li a:hover {
+    background-color: #111;
+  } */
+</style>

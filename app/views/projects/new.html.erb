@@ -1,0 +1,13 @@
+<div class="block">
+  <h1>새 프로젝트를 생성합니다!</h1>
+  
+  <%= form_for @project do |f| %>
+    <%= f.text_field :title, required: :true, placeholder: "프로젝트명", label: false %>
+    <%= f.text_field :detail, required: :true, placeholder: "상세설명", label: false %>
+    <%= f.text_field :condition, required: :true, placeholder: "팀원 조건", label: false %>
+    <%= f.text_field :location, required: :true, placeholder: "장소", label: false %>
+    <%= f.text_field :time, required: :true, placeholder: "마감일", label: false %>
+    <%= f.text_field :number, required: :true, placeholder: "목표 인원", label: false %>
+    <%= f.submit class: 'btn btn-warning' %>
+  <% end %>
+</div>
