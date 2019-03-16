@@ -1,31 +1,35 @@
 <%= render 'shared/navbar' %>
 <%= render 'shared/filter' %>
 
-<div class="section">
-  <div class="card">
-    <div class="card-profile-img">
-      <img src="<%= asset_path 'logo.png' %>" style="width: 33px; height: 33px;"></img>
-    </div>
-    <div class="card-username">
-      김가현
-    </div>
-    <div class="card-user-category">
-      developer
-    </div>
-    <div class="card-sub">
-      수원시 권선구 권선동
-    </div>
-    <div class="card-job">
-      레일즈, 웹애플리케이션, 백엔드
-    </div>
-    <div class="card-detail">
-      성실함, 스타트업 근무 경험, 4학년
-    </div>
-    <div class="card-bottom">
-      <div class="card-last-update">
-        10분 전 업데이트
-      </div>
-      <div class="card-scrap"></div>
-    </div>
-  </div>
+<div class="section" style="margin-top: 140px;">
+ <% @projects.each do |project| %>
+ <a href="<%= project_path(project) %>">
+   <div class="card">
+     <div class="card-profile-img">
+       <img src="<%= asset_path 'logo.png' %>" style="width: 33px; height: 33px;"></img>
+     </div>
+     <div class="card-username">
+       <%= project.title %>
+     </div>
+     <div class="card-user-category">
+       developer
+     </div>
+     <div class="card-sub">
+       <%= project.location %>
+     </div>
+     <div class="card-job">
+       <%= project.condition %>
+     </div>
+     <div class="card-detail">
+       <%= project.detail %>
+     </div>
+     <div class="card-bottom">
+       <div class="card-last-update">
+         10분 전 업데이트
+       </div>
+       <div class="card-scrap"></div>
+     </div>
+   </div>
+  </a>
+ <% end %>
 </div>

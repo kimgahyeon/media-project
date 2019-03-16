@@ -1,6 +1,36 @@
-<div class="filter-menu">
-  <span class="filter-icon">필터</span>
+<!-- <div class="filter-menu">
+  <span class="filter-icon"><i class="fas fa-filter"></i></span>
   <span class="filter-location">지역</span>
   <span class="filter-duty">직무</span>
-  <span class="new-project"><%= link_to '새 프로젝트 모집', new_project_path %></span>
+  <span class="new-project"><%#= link_to '새 프로젝트 모집', new_project_path %></span>
+</div> -->
+
+<div class="filter">
+  <ul style="vertical-align: middle;">
+    <li class="unclickable" style="float:left;"><a href="#"s><i class="fas fa-filter"></i></a></li>
+    <li class="dropdown" style="float:left; margin-left: 50px; position: absolute;">
+      <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"">지역</a>
+      <ul class="dropdown-menu" role="menu">
+        <li class="center"><a tabindex="-1" href="#">서울특별시</a></li>
+        <li class="center"><a tabindex="-1" href="#">경기도</a></li>
+        <li class="center"><a tabindex="-1" href="#">부산광역시</a></li>
+        <li class="center"><a tabindex="-1" href="#">인천광역시</a></li>
+      </ul>
+    <li>
+      <li class="dropdown" style="float:left; margin-left: 100px; position: absolute;">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"">직무</a>
+        <ul class="dropdown-menu" role="menu">
+          <li class="center"><a tabindex="-1" href="#">developer</a></li>
+          <li class="center"><a tabindex="-1" href="#">designer</a></li>
+          <li class="center"><a tabindex="-1" href="#">project manger</a></li>
+          <li class="center"><a tabindex="-1" href="#">publisher</a></li>
+        </ul>
+      <li>    <li style="float:right;"><a href="<%= new_project_path %>">새 프로젝트 모집</a></li>
+
 </div>
+
+<style>
+  .center{
+    float: none;
+  }
+</style>

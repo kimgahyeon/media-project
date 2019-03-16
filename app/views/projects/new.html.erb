@@ -1,20 +1,65 @@
 <%= render 'shared/navbar' %>
-<div class="form-section" style="margin-top: 120px;">
-  <div class="" style= "display: block; padding: 30px 30px;">
-      <h1>팀 모집입니다!</h1>
+<div class="form-section" style="margin-top: 120px; margin-bottom: 100px; padding-bottom: 20px;">
+  <div class="form-title">
+    새로운 프로젝트 만들기
   </div>
 
-  <!-- <div class="form" style="margin-top: 30px;">
-    <%#= form_for @project do |f| %>
-      <%#= f.label :Title %>
-      <%#= f.text_field :title, required: :true, placeholder: "프로젝트명" %> <br>
-      <%#= f.text_field :detail, required: :true, placeholder: "상세설명", label: false %>
-      <%#= f.text_field :condition, required: :true, placeholder: "팀원 조건", label: false %>
-      <%#= f.text_field :location, required: :true, placeholder: "장소", label: false %>
-      <%#= f.text_field :time, required: :true, placeholder: "마감일", label: false %>
-      <%#= f.text_field :number, required: :true, placeholder: "목표 인원", label: false %>
-      <%#= f.submit class: 'btn btn-warning' %>
-    <%# end %>
-  </div> -->
+  <%= simple_form_for @project,
+    wrapper: :horizontal_form,
+    wrapper_mappings: {
+      boolean:       :horizontal_boolean,
+      check_boxes:   :horizontal_collection,
+      date:          :horizontal_multi_select,
+      datetime:      :horizontal_multi_select,
+      file:          :horizontal_file,
+      radio_buttons: :horizontal_collection,
+      range:         :horizontal_range,
+      time:          :horizontal_multi_select
+  } do |f| %>
 
+
+  <div class="form-new">
+    프로젝트 이름
+    <%= f.input :title, input_html: { :style=>'width:135%;'}, placeholder: "ex) 티메이트 (미정)", label: false %>
+  </div>
+
+  <div class="form-new">
+    프로젝트 한줄 설명 (20자 이내)
+    <%= f.input :detail, maxlength: "20", input_html: { :style=>'width:135%;'}, placeholder: "ex) 블록체인 기반 팀빌딩 플랫폼", label: false %>
+  </div>
+
+  <div class="form-new">
+    참여 조건
+    <%= f.input :condition, input_html: { :style=>'width:135%;'}, placeholder: "ex) python 가능자, 팀 프로젝트 경험자", label: false %>
+  </div>
+
+  <div class="form-new">
+    프로젝트 마감날짜
+    <%= f.input :time, as: :date, input_html: { :style=>'width:135%;'}, label: false %>
+  </div>
+
+  <div class="form-new">
+    활동 위치
+    <%= f.input :location,  :collection => %w[추후결정 서울특별시 경기도 인천광역시 대구광역시 부산광역시], input_html: { :style=>'width:135%;'}, :selected => [:추후결정], label: false %>
+  </div>
+
+  <div class="form-new">
+    현재 팀원 수
+    <%= f.input :number, collection: 1..5, prompt: "활동 인원", selected: 1, input_html: { :style=>'width:135%;'}, label: false %>
+  </div>
+
+  <div class="form-new">
+    담당자 연락처
+    <%= f.input :contact, input_html: { :style=>'width:135%;'}, placeholder: "연락 가능한 이메일 또는 전화번호 ", label: false %>
+  </div>
+
+  <div class="form-new">
+    프로젝트 상세설명
+    <%= f.input :desc, as: :text, input_html: { :style=>'width:135%;', :rows => 10}, label: false %>
+  </div>
+
+  <div class="form-button">
+    <%= f.submit "팀 생성하기", class: "btn btn-warning", input_html: {:style => 'width: 100%;'} %>
+  </div>
+  <% end %>
 </div>

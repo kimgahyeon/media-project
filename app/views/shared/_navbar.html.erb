@@ -1,13 +1,30 @@
 <div class="header">
-  <ul>
+  <ul style="vertical-align: middle;">
     <span class="logo">
     </span>
     <!-- <li><a href="javascript:logoutWithKakao()">로그아웃하기</a></li>
     <li><a href="javascript:loginWithKakao()">카카오톡 로그인</a></li> -->
     <% if current_user %>
-      <li><%= link_to "로그아웃", destroy_user_session_path, :method => :delete %><li>
+      <!-- <li><%#= link_to "로그아웃", destroy_user_session_path, :method => :delete %><li> -->
       <!-- <li><a href="<%= destroy_user_session_path %>">로그아웃</a></li> -->
-      <li><a href="#">마이페이지</a></li>
+
+      <!-- 마이페이지 -->
+      <li class="dropdown" style="position: absolute; right:20px;">
+        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <i class="far fa-user-circle" style="font-size:30px; line-height: 20px;"></i>
+        </a>
+        <ul class="dropdown-menu" role="menu" style="left:-100px;">
+          <li class="dropdown-li"><a tabindex="-1" href="<%= home_mypage_path %>">프로필</a></li>
+          <li class="dropdown-li"><a tabindex="-1" href="#">연락처 요청 확인</a></li>
+          <li class="dropdown-li"><a tabindex="-1" href="#">개인정보 수정</a></li>
+          <li class="dropdown-li"><%= link_to '로그아웃', destroy_user_session_path, :method => :delete %> </li>
+        </ul>
+      </li>
+
+      <li><a href="#"><i class="far fa-bell" style="font-size: 20px; margin-right: 68px;"></i></a></li>
+      <li><a href="#"><i class="far fa-comment" style="font-size:20px;"></i></a></li>
+      <!-- <li><a href="#"><i class="fas fa-search" style="font-size: 20px;"></i></a></li> -->
+
     <% else %>
       <li><a href="<%= new_user_session_path %>">로그인/회원가입</a></li>
     <% end %>
@@ -16,18 +33,22 @@
 
     <!-- <li><a class="active" href="<%#=  new_user_session_path %>">로그인/회원가입</a></li> -->
     <li><a href="<%= projects_path %>">프로젝트모집</a></li>
-    <li><a href="#">티메이트찾기</a></li>
-
-    <% if current_user %>
-    <li><a class="unclickable"><%= current_user.email %>님 안녕하세요!</a></li>
-    <% end %>
+    <li><a href="<%= mates_path %>">티메이트찾기</a></li>
 
     <li style="float: left"> <a href="<%= root_path %>">로고</a>
     </li>
-  </ul>
 
 </div>
+
+<style>
+  .dropdown-li{
+    float: left;
+    padding: 10px 10px;
+  }
+
+</style>
 <!--
+
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 <script type='text/javascript'>

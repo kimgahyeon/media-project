@@ -22,10 +22,20 @@
    Css Templete
 
    Project:	2019-1 미디어프로젝트 <teamate>
-   Last change:	2019-03-10
+   Last change:	2019-03-16
    Author: 김가현
 
  -------------------------------------------------------------------*/
+
+ /************** Font-awsome *************/
+
+ @font-face {
+   font-family: "FontAwesome";
+   src: url('assets/fonts/fontawesome-webfont.eot');
+   src: url('assets/fonts/fontawesome-webfont.eot?#iefix') format('eot'), url('../font/fontawesome-webfont.woff') format('woff'), url('assets/font/fontawesome-webfont.ttf') format('truetype'), url('assets/font/fontawesome-webfont.svg#FontAwesome')    format('svg');
+   font-weight: normal;
+   font-style: normal;
+ }
 
  /************** General *************/
  .header{
@@ -34,6 +44,15 @@
   width: 100%;
   border-bottom: 1px solid #EFEFEF;
   top: 0px;
+ }
+
+ .filter{
+   position: fixed;
+   z-index: 99;
+   width: 100%;
+   top:0px;
+   border-top: 1px solid #EFEFEF;
+   margin-top: 69px;
  }
 
  body {
@@ -429,7 +448,6 @@ li a {
 }
 
 /************** form *************/
-
 .form-section{
   text-align: left;
   margin: 0px auto;
@@ -438,4 +456,44 @@ li a {
   margin-top: 40px;
   background-color: #ffffff;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-title{
+  font-size: 14px;
+  color: #3c3c3c;
+  font-weight: 700;
+  padding: 18px 30px 13px;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.form-new{
+  line-height: 38px;
+  font-size: 14px;
+  margin: 20px 35px;
+  vertical-align: top;
+}
+
+.form-button{
+  line-height: 38px;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.custom-form{
+  width: 130%;
+}
+
+.form-input{
+  background-color: #ffffff;
+  height: 38px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 0px 10px;
+  font-size: 14px;
+  color: #3c3c3c;
+  vertical-align: middle;
 }

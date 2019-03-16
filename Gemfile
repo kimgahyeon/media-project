@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'jquery-ui-rails'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
+gem "font-awesome-rails"
 
 gem 'devise'
 # Use postgresql as the database for Active Record
