@@ -1,11 +1,42 @@
 <%= render 'shared/navbar' %>
-<div class="block" style="margin-top: 100px;">
-  <h1>프로젝트 상세페이지입니다!</h1>
-  제목 <%= @project.title %> <br>
-  설명 <%= @project.detail %> <br>
-  조건 <%= @project.condition %> <br>
-  위치 <%= @project.location %> <br>
-  시간 <%= @project.time %> <br>
-  인원 <%= @project.number %> <br>
-  상세설명 <%= @project.desc %>
+<style>
+  body{
+    background-color: white;
+  }
+</style>
+<div class="team-view">
+  <div class="team-head">
+    <div class="team-title">
+      <span class="team-name"><%= @project.title %></span>
+    </div>
+    <div class="team-detail">
+      <%= @project.detail %>
+    </div>
+
+    <div class="team-divbar">
+      <span style="float: right;">조회 3</span>
+      <span style="float: right; margin-right: 5px;">댓글 5</span>
+    </div>
+  </div>
+
+  <div class="team-recruit" style="padding-bottom: 70px;">
+    <div class="team-section-title"> 팀원조건</div>
+    <div class="team-section-content"><%= @project.condition %> <br> </div>
+
+      <div class="team-section-title"> 활동위치</div>
+      <div class="team-section-content"><%= @project.location %> <br> </div>
+
+      <div class="team-section-title"> 마감일자</div>
+      <div class="team-section-content"><%= @project.time %> <br> </div>
+
+      <div class="team-section-title">모집인원</div>
+      <div class="team-section-content"><%= @project.number %> <br> </div>
+
+      <div class="team-section-title"> 상세설명</div>
+      <div class="team-section-content"><%= simple_format @project.desc %> <br> </div>
+
+    <button class="btn btn-primary" style="float: right; margin-left: 20px;">참여 신청하기</button>
+    <button class="btn btn-warning" style="float: right;">담당자에게 문의하기</button>
+
+  </div>
 </div>

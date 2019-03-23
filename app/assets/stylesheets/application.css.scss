@@ -10,13 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui
+ *= require ionicons
  *= require_tree .
  *= require_self
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
+ @import "ionicons";
  /*------------------------------------------------------------------
 
    Css Templete
@@ -31,6 +33,8 @@
 
  @font-face {
    font-family: "FontAwesome";
+   font-family: 'Nanum Gothic', sans-serif;
+
    src: url('assets/fonts/fontawesome-webfont.eot');
    src: url('assets/fonts/fontawesome-webfont.eot?#iefix') format('eot'), url('../font/fontawesome-webfont.woff') format('woff'), url('assets/font/fontawesome-webfont.ttf') format('truetype'), url('assets/font/fontawesome-webfont.svg#FontAwesome')    format('svg');
    font-weight: normal;
@@ -57,7 +61,7 @@
 
  body {
    background: #fafafa;
- }
+   font-family: 'NanumSquare', sans-serif; }
 
  a {
    text-decoration: none;
@@ -271,6 +275,7 @@
 }
 
 .card-bottom{
+  vertical-align: middle;
   position: absolute;
   width: 100%;
   height: 30px;
@@ -288,7 +293,7 @@
 .card-scrap{
   position: absolute;
   right: 28px;
-  top: 6px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -448,6 +453,7 @@ li a {
 }
 
 /************** form *************/
+
 .form-section{
   text-align: left;
   margin: 0px auto;
@@ -496,4 +502,64 @@ li a {
   font-size: 14px;
   color: #3c3c3c;
   vertical-align: middle;
+}
+
+/************** project#show *************/
+
+.team-view{
+  max-width: 800px;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+.team-head{
+  padding: 120px 0px 40px;
+  text-align: center;
+}
+
+.team-name{
+  font-size: 30px;
+  font-weight: 900;
+  color: #3c3c3c;
+  margin: 0px 12px;
+  line-height: 40px;
+}
+
+.team-title{
+  margin-bottom: 18px;
+  padding: 0px 20px;
+}
+
+.team-detail{
+  color: #3c3c3c;
+}
+
+.team-divbar{
+  height: 38px;
+  border-bottom: 2px solid #EFEFEF;
+}
+
+.team-recruit{
+  padding: 40px 18px;
+  text-align: left;
+  line-height: 3em;
+}
+
+
+.team-content{
+  padding: 40px 18px;
+  text-align: left;
+}
+
+.team-section-title{
+  font-size: 18px;
+  font-weight: 700;
+  color: #3c3c3c;
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.team-section-content{
+  font-size: 16px;
+  color: rgb(60, 60, 60);
 }
