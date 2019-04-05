@@ -14,6 +14,10 @@
     </div>
 
     <div class="team-divbar">
+      <% if @project.user_id == current_user.id %>
+        <a href="<%= edit_project_path %>" style="float: left; margin-right: 8px;">수정</a>
+        <a href="<%= project_path(@project) %>" data-method="delete" style="float: left;">삭제</a>
+      <% end %>
       <span style="float: right;">조회 3</span>
       <span style="float: right; margin-right: 5px;">댓글 5</span>
     </div>
@@ -27,10 +31,10 @@
       <div class="team-section-content"><%= @project.location %> <br> </div>
 
       <div class="team-section-title"> 마감일자</div>
-      <div class="team-section-content"><%= @project.time %> <br> </div>
+      <div class="team-section-content"><%#= @project.time %> <br> </div>
 
       <div class="team-section-title">모집인원</div>
-      <div class="team-section-content"><%= @project.number %> <br> </div>
+      <div class="team-section-content"><%= @project.number %>명<br> </div>
 
       <div class="team-section-title"> 상세설명</div>
       <div class="team-section-content"><%= simple_format @project.desc %> <br> </div>
