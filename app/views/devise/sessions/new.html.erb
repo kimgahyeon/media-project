@@ -1,26 +1,40 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="form-section">
+  <div class="form-title">
+    로그인
   </div>
+  <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="form-new">
+      이메일
+      <%= f.input :email, autofocus: true, input_html: { :style=>' width:100%;'}, autocomplete: "email", label: false%>
+    </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="form-new">
+      비밀번호
+      <%= f.input :password, input_html: { :style=>' width:100%;'}, autocomplete: "current-password", label: false %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="form-new">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="form-button actions">
+      <%= f.submit "로그인", class: "btn btn-success", input_html: {:style => 'width: 100%;'} %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div style="text-align: center; text-size: 13px; line-height: 2rem;">
+    아직 회원이 아니신가요?
+    <div style="text-decoration: underline; cursor: pointer; font-weight: bold; display: inline;">
+      <%= link_to '회원가입', new_registration_path(resource_name) %>
+    </div>
+    <br>
+    비밀번호를 잊으셨나요?
+    <div style="text-decoration: underline; cursor: pointer; font-weight: bold; display: inline;">
+      <%= link_to '비밀번호 찾기', new_password_path(resource_name) %>
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -1,29 +1,44 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="form-section">
+  <div class="form-title">
+    회원가입
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-new">
+      이름
+      <%# border: none; border-bottom: 1px solid #EFEFEF; %>
+      <%= f.input :name, input_html: { :style=>' width:100%;'}, placeholder: "ex) 김가현", label: false %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="form-new">
+      이메일
+      <%= f.input :email, input_html: { :style=>'width:100%;'}, placeholder: "ex) test@test.com", label: false %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="form-new">
+      비밀번호
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.input :password, input_html: { :style=>'width:100%;'}, label: false %>
+    </div>
+
+    <div class="form-new">
+      비밀번호 확인
+      <%= f.input :password_confirmation, input_html: { :style=>'width:100%;'}, label: false %>
+    </div>
+
+    <div class="form-button">
+      <%= f.submit "회원가입", class: "btn btn-info", input_html: {:style => 'width: 100%;'} %>
+    </div>
+  <% end %>
+
+  <div style="text-align: center; padding-bottom: 20px; text-size: 13px;">
+    이미 가입하셨다면?
+    <div style="text-decoration: underline; cursor: pointer; font-weight: bold; display: inline;">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

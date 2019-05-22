@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/mypage'
   get 'home/introduce'
+  get 'home/login'
+
   resources :projects
   resources :mates
 end

@@ -18,6 +18,8 @@
 </div>
 
 <div class="section">
+
+
   <div class="section-title">
     최신 프로젝트
   </div>
@@ -52,17 +54,17 @@
 
 <div class="section">
   <div class="section-title">
-    최신 프로젝트
+    기대되는 인재 추천
   </div>
 
-  <% @projects.each do |project| %>
-  <a href="<%= project_path(project) %>">
+  <% @users.each do |user| %>
+  <a href="<%= home_mypage_path(user) %>">
    <div class="card">
      <div class="card-profile-img">
        <img src="<%= asset_path 'logo.png' %>" style="width: 33px; height: 33px;"></img>
      </div>
      <div class="card-username">
-       <%= project.title %>
+       <%= user.title %>
      </div>
      <div class="card-user-category">
        developer
@@ -98,3 +100,10 @@
 </div>
 
 <%= render 'shared/footer' %>
+
+<script>
+    
+
+
+
+</script>
