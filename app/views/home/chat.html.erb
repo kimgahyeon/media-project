@@ -1,0 +1,62 @@
+<!-- <div class="block" style="font-size:20px;" id="app">
+  <p v-for="msg in chatArray">{{msg.msg}}</p>
+  <input v-model="chatMsg" type="text" name="" value="">
+  <button @click="addChat()" type="button" name="button">입력</button>
+
+
+</div>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      chatMsg: "",
+      chatArray: [],
+    },
+
+    created: function(){
+      this.readChat();
+    },
+
+    methods: {
+      addChat: function(){
+        this.chatArray = [];
+        firebase.database().ref("/chat/" + this.makeid()).update({
+          user_id: "kim",
+          msg: this.chatMsg
+        });
+      },
+
+      readChat: function () {
+        this.chatArray = [];
+
+        firebase.database().ref("/chat/").on("value", (snapshot) => {
+          snapshot.forEach((msg) => {
+
+
+
+
+            this.chatArray.push({
+              msg: msg.val().msg
+            });
+
+          });
+
+        });
+
+      },
+
+      makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var insert_date = moment().unix();
+
+        for (var i = 0; i < 20; i++) {
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return insert_date + text;
+      }
+
+    }
+  })
+</script> -->

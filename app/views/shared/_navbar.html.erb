@@ -13,9 +13,9 @@
           <i class="far fa-user-circle" style="font-size:30px; line-height: 20px;"></i>
         </a>
         <ul class="dropdown-menu" role="menu" style="left:-100px;">
-          <li class="dropdown-li"><a tabindex="-1" href="<%= home_mypage_path %>">프로필</a></li>
+          <li class="dropdown-li"><a tabindex="-1" href="<%= home_mypage_path %>">마이페이지</a></li>
+          <li class="dropdown-li"><a tabindex="-1" href="<%= edit_user_registration_path %>">프로필 수정</a></li>
           <li class="dropdown-li"><a tabindex="-1" href="#">연락처 요청 확인</a></li>
-          <li class="dropdown-li"><a tabindex="-1" href="#">개인정보 수정</a></li>
           <li class="dropdown-li"><%= link_to '로그아웃', destroy_user_session_path, :method => :delete %> </li>
         </ul>
       </li>
@@ -29,6 +29,7 @@
     <% end %>
 
     <li><a class="unclickable"">|</a></li>
+
     <li><a href="<%=  %>">커뮤니티</a></li>
     <li><a href="<%= projects_path %>">프로젝트모집</a></li>
     <li><a href="<%= mates_path %>">티메이트찾기</a></li>

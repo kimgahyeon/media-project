@@ -17,15 +17,14 @@
   </div>
 </div>
 
+
 <div class="section">
-
-
   <div class="section-title">
     최신 프로젝트
   </div>
 
-  <% @projects.each do |project| %>
-    <a href="<%= project_path(project) %>">
+ <% @projects.each do |project| %>
+   <a href="<%= project_path(project) %>">
       <div class="recruit-card">
         <div class="recruit-card-image">
           <img src="<%= asset_path 'picture.jpg'%>" style="width:100%;"></img>
@@ -46,48 +45,53 @@
           <div class="recruit-bottom">
             <%= time_ago_in_words(project.updated_at) %> 전 업데이트
           </div>
+          <!-- 좋아요 -->
+          <!-- <div class="" id="app">
+            <button @click="toggleHeart()" type="button" name="button">likes</button>
+            <p v-if="heart==0">Black</p>
+            <p v-if="heart==1">Red</p>
+          </div> -->
         </div>
       </div>
     </a>
-  <% end %>
+ <% end %>
 </div>
 
 <div class="section">
   <div class="section-title">
     기대되는 인재 추천
   </div>
-
   <% @users.each do |user| %>
-  <a href="<%= home_mypage_path(user) %>">
-   <div class="card">
-     <div class="card-profile-img">
-       <img src="<%= asset_path 'logo.png' %>" style="width: 33px; height: 33px;"></img>
-     </div>
-     <div class="card-username">
-       <%= user.title %>
-     </div>
-     <div class="card-user-category">
-       developer
-     </div>
-     <div class="card-sub">
-       <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> <%= project.location %>
-     </div>
-     <div class="card-job">
-       <%= project.condition %>
-     </div>
-     <div class="card-detail">
-       <%= project.detail %>
-     </div>
-     <div class="card-bottom">
-       <div class="card-last-update">
-         10분 전 업데이트
+     <div class="card">
+       <a class="no-underline" href="<%= home_mypage_path(user) %>">
+         <div class="card-profile-img">
+           <img src="<%= asset_path 'logo.png' %>" style="width: 33px; height: 33px;"></img>
+         </div>
+         <div class="card-username">
+           <%= user.name %>
+         </div>
+         <div class="card-user-category">
+           <%= user.job %>
+         </div>
+         <div class="card-sub">
+           <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 수원시 권선구<%#= user.location %>
+         </div>
+         <div class="card-job">
+           우에엥
+         </div>
+         <div class="card-detail">
+           우에엥
+         </div>
+       </a>
+       <div class="card-bottom">
+         <div class="card-last-update">
+           10분 전 업데이트
+         </div>
+         <div class="card-scrap">
+           <i class="far fa-star"></i>
+         </div>
        </div>
-       <div class="card-scrap">
-         <i class="far fa-star"></i>
-       </div>
      </div>
-   </div>
-  </a>
   <% end %>
 </div>
 
@@ -101,9 +105,37 @@
 
 <%= render 'shared/footer' %>
 
+
+<style>
+  .no-underline{
+    text-decortaion: none !important;
+  }
+</style>
+<!--
 <script>
-    
+  var app = new Vue({
+    el: '#app',
+    data: {
+      heart: 0,
+      message: '안녕하세요 Vue!'
+    },
+    methods: {
 
+      toggleHeart: function(){
+        if(this.heart == 1) {
+          this.heart = 0;
 
-
-</script>
+          // axios.post("http://localhost:3000/").post({
+          //   user_email: "kimgahyun1@ajou.ac.kr",
+          //   project_id: "123"
+            // axios.post("http://localhost:3000/", {
+            //   user_email: "kimgahyun1@ajou.ac.kr",
+            //   project_id: "123"
+            // });
+        } else{
+          this.heart = 1;
+        }
+      }
+    }
+  })
+</script> -->

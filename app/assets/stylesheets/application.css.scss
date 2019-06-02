@@ -547,6 +547,30 @@ li a {
   line-height: 3em;
 }
 
+.team-recruit .contact-info{
+  width: 100%;
+}
+
+.team-recruit .contact-info .info-title{
+  font-size: 15px;
+  color: #3c3c3c;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.team-recruit .contact-info .info-tl{
+  margin: 4px 0px;
+}
+
+.team-recruit .contact-info .info-tl .info-name {
+  display: inline-block;
+  font-weight: 700;
+  width: 90px;
+}
+
+.team-recruit .contact-info .info-tl .info-content {
+  display: inline-block;
+}
 
 .team-content{
   padding: 40px 18px;

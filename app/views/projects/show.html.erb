@@ -38,9 +38,30 @@
 
       <div class="team-section-title"> 상세설명</div>
       <div class="team-section-content"><%= simple_format @project.desc %> <br> </div>
+      <hr>
+
+      <div class="contact-info">
+        <div class="info-title">담당자 연락처</div>
+        <div class="info-tl">
+          <span class="info-name">이름</span>
+          <span class="info-content"><%= @project.user.name %></span>
+        </div>
+        <div class="info-tl">
+          <span class="info-name">이메일</span>
+          <span class="info-content"><%= @project.user.email %></span>
+        </div>
+        <div class="info-tl">
+          <span class="info-name">핸드폰</span>
+          <span class="info-content"><%= @project.user.phone %></span>
+        </div>
+      </div>
 
     <button class="btn btn-primary" style="float: right; margin-left: 20px;">참여 신청하기</button>
     <button class="btn btn-warning" style="float: right;">담당자에게 문의하기</button>
 
   </div>
 </div>
+
+
+<style>
+</style>

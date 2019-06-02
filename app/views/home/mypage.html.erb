@@ -1,13 +1,158 @@
 <%= render 'shared/navbar' %>
-<div class="block" style="margin-top: 100px;">
-  <h1>마이페이지입니다!</h1>  <br>
+<div class="mypage_section">
+  <div class="user_info">
 
-  <h2><%= @user.email %> 님 안녕하세요! </h2><br>
+    <span class="user_name">
+      <%= current_user.name %>
+    </span>
 
-  <h3><a href="#">회원정보 수정</a></h3> <br>
+    <span class="user_job">
+      개발자
+    </span>
 
-  <h3><a href="#">프로필 수정</a></h3> <br>
-  <h3><a href="#">스크랩한 티메이트</a></h3> <br>
-  <h3><a href="#">스크랩한 프로젝트</a></h3> <br>
 
+    <div class="profile_img"> </div>
+
+    <div class="user_email">
+      <i class="far fa-envelope" style="margin-right: 3px;"></i>
+      <%= current_user.email %>
+
+    </div>
+
+    <div class="user_email">
+      <i class="fas fa-cube" style="margin-right: 3px;"></i>
+      아직 등록된 계정이 없어요
+    </div>
+
+
+    <div style="margin-top: 30px;">
+      <%= link_to edit_user_registration_path do %>
+      <button class="btn btn-default" style="font-size: 12px; line-height: 25px; padding: 5px 20px; margin-right: 5px;" >프로필 수정</button>
+      <% end %>
+      <button class="btn black_btn" data-toggle="modal" data-target="#mymodal">블록체인 계정 연결</button>
+    </div>
+    <span class="profile_desc">프로필을 입력하고 자신을 홍보하세요!</span>
+
+
+    <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+  </div>
+  <hr>
+</div>
+
+
+<div class="scrap_section">
+  <div class="scrap_info">
+    <div style="margin-top: 10px;">
+      <button class="btn btn-warning" style="font-size: 12px; line-height: 25px; padding: 5px 20px;  margin-right: 5px; ">스크랩한 프로젝트</button>
+      <button class="btn btn-default" style="font-size: 12px; line-height: 25px; padding: 5px 20px;">스크랩한 티메이트</button>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+  .mypage_section{
+    background-color: white;
+    text-align: center;
+    margin-top: 70px;
+  }
+
+  .scrap_section{
+    text-align: center;
+  }
+
+  .user_info {
+    margin-top: 50px;
+    padding-bottom: 25px;
+    width: 650px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+  }
+
+  .scrap_info{
+    padding-bottom: 35px;
+    width: 650px;
+    display: inline-block;
+    position: relative;
+    text-align: left;
+  }
+
+  .user_info span.profile_desc {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #00b992;
+  }
+
+  .user_info .profile_img{
+    background-image: url(<%= asset_path 'logo.png' %>);
+    background-size: cover;
+    background-position: center center;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .user_info .user_name {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #3c3c3c;
+    display: inline;
+  }
+
+  .user_info .user_email {
+    color: #565656;
+    margin-top: 13px;
+    font-size: 13px;
+}
+
+  .user_info .user_job {
+    font-size: 14px;
+    font-weight: 700;
+    color: #565656;
+    vertical-align: top;
+    line-height: 16px;
+    margin-top: 1px;
+  }
+
+  .black_btn{
+    background-color: #565656;
+    color: #ffffff !important;
+    border: none !important;
+    transition-duration: 0.2s;
+    line-height: 25px;
+    padding: 5px 20px;
+    font-size: 12px;
+  }
+
+  .user_scrap_list {
+    padding: 30px;
+    background-color: #fafafa;
+  }
+
+</style>

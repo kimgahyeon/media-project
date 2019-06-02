@@ -4,20 +4,64 @@
     <title>Myapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+
+
+    <!-- vue.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.4/polyfill.js"></script> -->
+
+<%#
+      <!-- firebase -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCHCF0mnVmAciHeoVah4z6KxL0pQfKQWo0",
+        authDomain: "asdfafdagad.firebaseapp.com",
+        databaseURL: "https://asdfafdagad.firebaseio.com",
+        projectId: "asdfafdagad",
+        storageBucket: "asdfafdagad.appspot.com",
+        messagingSenderId: "907195764510",
+        appId: "1:907195764510:web:5e21c66c8561183a"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.js"></script>
+    <script>
+      moment().format();
+    </script> %>
+
+
     <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
 
+
+
+
+    <!-- routing error 해결 -->
 <!--
     <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+ -->
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
+
   </head>
 
   <body>
